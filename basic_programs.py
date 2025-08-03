@@ -93,6 +93,9 @@ def checksign(num):
     else:
         return "Zero"
 
+def is_palindrome(s):
+    return str(s) == str(s)[::-1]
+
 if __name__ == "__main__":
     hello_world()
     print(is_prime(7))
@@ -108,3 +111,4 @@ if __name__ == "__main__":
     fibonacci(5)
     print(lcm(15, 25))
     print(is_armstrong(153))
+    print(is_palindrome(12321))
