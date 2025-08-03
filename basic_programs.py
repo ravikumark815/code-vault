@@ -35,6 +35,48 @@ def f_to_c(n):
 def sum_of_n_nums(num):
     return num * (num + 1) // 2
 
+def factorial(num):
+    if num == 0:
+        return 1
+    else:
+        return num * factorial(num - 1)
+
+def fibonacci(n):
+    if n <= 0:
+        return
+    a, b = 0, 1
+    print(a, end=" ")
+    for _ in range(n - 1):
+        print(b, end=" ")
+        a, b = b, a + b
+    print()
+    
+def lcm(x,y):
+    max_elem = max(x,y)
+    while(1):
+        if max_elem % x == 0 and max_elem % y == 0:
+            return max_elem
+        max_elem += 1
+
+def is_armstrong(num):
+    # An Armstrong number is defined as a number that is equal to the sum of 
+    # the Kth power of each digit in the number, where K is the number of digits in it.
+    # 1^3 + 5^3 + 3^3= 153
+    num_str = str(num)
+    num_len = len(num_str)
+    sum = 0
+    for i in num_str:
+        sum += int(i)**num_len
+    return num == sum
+
+def check_leap_year(year):
+    if (year % 400 == 0):
+        return True
+    elif (year % 100 == 0):
+        return False
+    elif (year % 4 == 0):
+        return True
+
 def data_type_sizes():
     print(sys.getsizeof(int))
     print(sys.getsizeof(str))
@@ -61,3 +103,8 @@ if __name__ == "__main__":
     print(complex(3,4) + complex(3,4))
     print(checksign(-39))
     print(sum_of_n_nums(10))
+    print(check_leap_year(1900))
+    print(factorial(5))
+    fibonacci(5)
+    print(lcm(15, 25))
+    print(is_armstrong(153))
