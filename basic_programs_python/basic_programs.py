@@ -96,6 +96,13 @@ def checksign(num):
 def is_palindrome(s):
     return str(s) == str(s)[::-1]
 
+def reverse_words(s):
+    # Input: i like this program very much
+    # Output: much very program this like i
+    s_list = s.split(' ')
+    s_list.reverse()
+    return ' '.join(s_list)
+
 if __name__ == "__main__":
     hello_world()
     print(is_prime(7))
@@ -112,6 +119,4 @@ if __name__ == "__main__":
     print(lcm(15, 25))
     print(is_armstrong(153))
     print(is_palindrome(12321))
-
-    for i in range(10):
-        print(sum_of_n_nums(i))
+    print(reverse_words("Ravi Kumar Reddy Koothati"))
