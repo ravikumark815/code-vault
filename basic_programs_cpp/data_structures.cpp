@@ -70,20 +70,37 @@ int main()
 
     // --- Array---
     cout << "--- Array ---\n";
-    array<int, 3> arr;
-    arr = {800,500,900};
-    cout << arr.size() << endl;
+    array<int, 5> arr;
+    arr = {800,500,900,200,700};
 
     // Iterate
     for (auto i : arr) {
         cout << i << " ";
     }
-    cout << "\nBegin: " << *arr.begin() << endl;
+    cout << endl;
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Begin: " << *arr.begin() << endl;
     cout << "End: " << *arr.end() << endl;
     cout << "End-1: " << *(arr.end() - 1) << endl;
+    cout << "Front: " << arr.front() << endl;
+    cout << "Back: " << arr.back() << endl;
+    cout << "CBegin: " << arr.cbegin() << endl;
+    cout << "CEnd: " << arr.cend() << endl;
+    cout << "*CBegin: " << *arr.cbegin() << endl;
+    cout << "*CEnd: " << *arr.cend() << endl;
+    cout << "Empty: " << arr.empty() << endl;
+    cout << "At4: " << arr.at(4) << endl;
+    cout << "Size: " << arr.size() << endl;
+    cout << "Max size: " << arr.max_size() << endl;
+    cout << "Sizeof: " << sizeof(arr) << endl;
+    cout << "*Data: " << *arr.data() << endl;
     
     // Fill
-    cout << "Fill: "
+    cout << "Fill: ";
     array<string, 5> sarr;
     sarr.fill("abc");
     for (auto i : sarr) {
@@ -93,6 +110,16 @@ int main()
     // Sort
     sort(arr.begin(), arr.end());
     cout << "Sorted: ";
+    for (auto i : arr) {
+        cout << i << " ";
+    }
+    cout << endl;
+    
+    // Swap
+    array <int, 5> arr1;
+    arr1.fill(10);
+    arr.swap(arr1);
+    cout << "Swap: ";
     for (auto i : arr) {
         cout << i << " ";
     }
