@@ -17,6 +17,7 @@ Feel free to explore and contribute!
 #include <deque>
 #include <list>
 #include <forward_list>
+#include <map>
 using namespace std;
 /*
 pair
@@ -306,5 +307,31 @@ int main()
     }
     cout << endl;
 
+    // Map (Red-black tree, k-v pairs, ordered(sorted))
+    cout << "\n--- Map ---\n";
+    map <int, string> m;
+    map <int, string, greater<int>> m_d; // descending keys
+    m.insert({100, "Hundred"});
+    m.emplace(200, "Two Hundred");
+    m.emplace(800, "Eight Hundred");
+    m.emplace(600, "Six Hundred");
+    
+    cout << "Map: ";
+    for (auto it : m) {
+        cout << it.first << ":" << it.second << ", ";
+    }
+    cout << endl;
+
+    m.erase(200);
+    m.erase(m.begin());
+    cout << "Size: " << m.size() << endl;
+    cout << "Empty: " << m.empty() << endl;
+
+    cout << "Map: ";
+    for (auto it : m) {
+        cout << it.first << ":" << it.second << ", ";
+    }
+    cout << endl;
+    
     return 0;
 }
