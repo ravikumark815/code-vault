@@ -16,6 +16,7 @@ Feel free to explore and contribute!
 #include <queue> // Queue & Priority_queue
 #include <deque>
 #include <list>
+#include <forward_list>
 using namespace std;
 /*
 pair
@@ -267,6 +268,41 @@ int main()
     cout << "List2: ";
     for (auto it: ls2) {
         cout << it << " ";
+    }
+    cout << endl;
+
+    // Forward List (Singly Linked List)
+    cout << "\n--- Forward List ---\n";
+    forward_list <int> fl;
+    fl.push_front(800);
+    fl.push_front(600);
+    fl.push_front(700);
+    fl.push_front(650);
+    fl.push_front(200);
+    fl.push_front(200);
+    fl.emplace_front(300);
+
+    cout << "Forward list: ";
+    for (auto i: fl) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    cout << "Empty: " << fl.empty() << endl;
+    cout << "Front: " << fl.front() << endl;
+    
+    auto it_fl = fl.before_begin();
+    advance(it_fl, 2);
+    fl.insert_after(it_fl, 900);
+    fl.remove(650);
+    fl.erase_after(it_fl);
+    fl.unique();
+    fl.sort();
+    fl.reverse();
+
+    cout << "Forward list: ";
+    for (auto i: fl) {
+        cout << i << " ";
     }
     cout << endl;
 
