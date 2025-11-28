@@ -11,6 +11,7 @@ Feel free to explore and contribute!
 #include <string>
 #include <utility> // pair
 #include <array>
+#include <vector>
 
 using namespace std;
 /*
@@ -124,6 +125,23 @@ int main()
         cout << i << " ";
     }
     cout << endl;
+
+    // Vector
+    vector <int> v1 = {900,200,600};
+    vector <int> v2(5, 100);
+    v1.push_back(300);
+    v1.emplace_back(800);
+    v1.insert(v1.end(),500);
+    v1.erase(v1.end()-1);
+    for (auto it : v1) {
+        cout << it << " ";
+    }
+    cout << endl;
+    cout << "Size: " << v1.size() << endl;;
+    cout << "Capacity: " << v1.capacity() << endl;
+    cout << "Empty: " << v1.empty() << endl;
+    v1.resize(10);
+    cout << "After reSize: " << v1.size() << endl;;
 
     return 0;
 }
