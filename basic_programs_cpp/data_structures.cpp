@@ -18,6 +18,7 @@ Feel free to explore and contribute!
 #include <list>
 #include <forward_list>
 #include <map>
+#include <unordered_map>
 using namespace std;
 /*
 pair
@@ -356,6 +357,36 @@ int main()
     cout << endl;
 
     cout << "Count300: " << mm.count(300) << endl;
+
+    // Unordered Map (Hashmap)
+    cout << "\n--- Unordered Map ---\n";
+    unordered_map <int, string> um;
+    um[100] = "Hundred";
+    um.insert({200, "Two Hundred"});
+    um.emplace(300, "Three Hundred");
+    um.emplace(400, "Four Hundred");
+    um[500] = "Five Hundred";
+
+    cout << "Unordered Map: ";
+    for (auto it: um) {
+        cout << it.first << ":" << it.second << ", ";
+    }
+    cout << endl;
+
+    cout << "Size: " << um.size() << endl;
+    cout << "Empty: " << um.empty() << endl;
+    // cout << "Contains 500: " << um.contains(500) << endl; // C++20
+    cout << "Count: " << um.count(500) << endl;
+    cout << "Find: " << (*um.find(400)).first << ":" << (*um.find(400)).second << endl;
+    cout << "Bucket Count: " << um.bucket_count() << endl;
+    cout << "Load Factor: " << um.load_factor() << endl;
+    um.erase(400);
+
+    cout << "Unordered Map: ";
+    for (auto it: um) {
+        cout << it.first << ":" << it.second << ", ";
+    }
+    cout << endl;
     
     return 0;
 }
