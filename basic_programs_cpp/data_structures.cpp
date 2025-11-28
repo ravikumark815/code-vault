@@ -13,6 +13,8 @@ Feel free to explore and contribute!
 #include <array>
 #include <vector>
 #include <stack>
+#include <queue> // Queue & Priority_queue
+#include <deque>
 using namespace std;
 /*
 pair
@@ -70,7 +72,7 @@ int main()
     cout << "<= " << (p1 <= p2) << endl;
 
     // --- Array---
-    cout << "--- Array ---\n";
+    cout << "\n--- Array ---\n";
     array<int, 5> arr;
     arr = {800,500,900,200,700};
 
@@ -127,6 +129,7 @@ int main()
     cout << endl;
 
     // Vector
+    cout << "\n--- Vector ---\n";
     vector <int> v1 = {900,200,600};
     vector <int> v2(5, 100);
     v1.push_back(300);
@@ -144,17 +147,71 @@ int main()
     cout << "After resSize: " << v1.size() << endl;
 
     // Stack
+    cout << "\n--- Stacks ---\n";
     stack <int> st;
     st.push(100);
     st.push(200);
     st.push(300);
-    st.push(400);
+    st.emplace(400);
     cout << "Top: " << st.top() << endl;
     st.pop();
     cout << "Top: " << st.top() << endl;
     cout << "Empty: " << st.empty() << endl;
     cout << "Size: " << st.size() << endl;
 
+    // Queues
+    cout << "\n--- Queues ---\n";
+    queue <int> qu;
+    qu.push(300);
+    qu.push(100);
+    qu.push(150);
+    qu.push(230);
+    qu.push(540);
+    cout << "Size: " << qu.size() << endl;
+    cout << "Front: " << qu.front() << endl;
+    qu.pop();
+    cout << "Front: " << qu.front() << endl;
+    cout << "Back: " << qu.back() << endl;
+    cout << "Empty: " << qu.empty() << endl;
+    
+    // Deque
+    cout << "\n--- Dequeue --- \n";
+    deque <int> dq;
+    dq.push_front(100);
+    dq.push_back(500);
+    dq.insert(dq.begin() + 2, 300);
+    dq.push_front(800);
+    dq.emplace_back(150);
+    cout << "Deque: ";
+    for (auto it: dq) {
+        cout << it << " ";
+    }
+    cout << endl;
+    cout << "Size: " << dq.size() << endl;
+    cout << "Empty: " << dq.empty() << endl;
+    cout << "Begin: " << *dq.begin() << endl;
+    cout << "End: " << *dq.end() << endl;
+    cout << "End-1: " << *(dq.end()-1) << endl;
+    dq.pop_back();
+    dq.pop_front();
+    cout << "Deque: ";
+    for (auto it: dq) {
+        cout << it << " ";
+    }
+    cout << endl;
+
+    // Priority Queue
+    cout << "\n--- Priority Queue (Heap) ---\n";
+    priority_queue <int> pq;
+    pq.push(100);
+    pq.push(800);
+    pq.push(500);
+    pq.emplace(300);
+    pq.emplace(200);
+    cout << "Top (Max): " << pq.top() << endl;
+    cout << "Size: " << pq.size() << endl;
+    cout << "Empty: " << pq.empty() << endl;
+    
     
     return 0;
 }
