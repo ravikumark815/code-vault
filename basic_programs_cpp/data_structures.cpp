@@ -15,6 +15,7 @@ Feel free to explore and contribute!
 #include <stack>
 #include <queue> // Queue & Priority_queue
 #include <deque>
+#include <list>
 using namespace std;
 /*
 pair
@@ -221,5 +222,53 @@ int main()
     cout << "Top (Min): " << min_pq.top() << endl;
     cout << "Size: " << min_pq.size() << endl;
     cout << "Empty: " << min_pq.empty() << endl;
+
+    // List
+    cout << "\n--- List ---\n";
+    list <int> ls;
+    ls.push_back(100);
+    ls.push_front(200);
+    ls.push_back(200);
+    ls.push_back(100);
+    ls.emplace_back(300);
+    ls.emplace_front(800);
+    auto it = ls.begin();
+    advance(it, 2);
+    ls.insert(it, 400);
+    cout << "List: ";
+    for (auto it: ls) {
+        cout << it << " ";
+    }
+    cout << endl;
+    ls.remove(400);
+    ls.sort();
+    ls.reverse();
+    ls.unique(); //Remove duplicates
+    cout << "List: ";
+    for (auto it: ls) {
+        cout << it << " ";
+    }
+    cout << endl;
+    list <int> ls2 = {750,650,850,250};
+    ls.merge(ls2);
+    // ls.sort();
+    // ls.reverse();
+    cout << "List: ";
+    for (auto it: ls) {
+        cout << it << " ";
+    }
+    cout << endl;
+    ls.splice(ls2.begin(), ls); // Transfer all elements from ls to ls2
+    cout << "List: ";
+    for (auto it: ls) {
+        cout << it << " ";
+    }
+    cout << endl;
+    cout << "List2: ";
+    for (auto it: ls2) {
+        cout << it << " ";
+    }
+    cout << endl;
+
     return 0;
 }
