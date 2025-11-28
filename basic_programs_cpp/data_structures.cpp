@@ -332,6 +332,30 @@ int main()
         cout << it.first << ":" << it.second << ", ";
     }
     cout << endl;
+
+    // Multimap (Ordered, allows duplicate keys)
+    cout << "\n--- Multimap ---\n";
+    multimap <int, string> mm;
+    mm.insert({100, "Hundred"});
+    mm.emplace(200, "Two Hundred");
+    mm.emplace(200, "Two Hundred");
+    mm.emplace(300, "Three Hundred");
+    mm.emplace(300, "Three Hundred");
+    mm.emplace(300, "Three Hundred");
+    mm.emplace(400, "Four Hundred");
+    mm.emplace(400, "Four Hundred");
+    mm.emplace(400, "Four Hundred");
+    mm.emplace(400, "Four Hundred");
+
+    mm.erase(400);
+
+    cout << "Multimap: ";
+    for(auto it: mm) {
+        cout << it.first << ":" << it.second << ", ";
+    }
+    cout << endl;
+
+    cout << "Count300: " << mm.count(300) << endl;
     
     return 0;
 }
