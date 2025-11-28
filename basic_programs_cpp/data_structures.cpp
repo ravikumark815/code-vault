@@ -12,7 +12,7 @@ Feel free to explore and contribute!
 #include <utility> // pair
 #include <array>
 #include <vector>
-
+#include <stack>
 using namespace std;
 /*
 pair
@@ -141,7 +141,20 @@ int main()
     cout << "Capacity: " << v1.capacity() << endl;
     cout << "Empty: " << v1.empty() << endl;
     v1.resize(10);
-    cout << "After reSize: " << v1.size() << endl;;
+    cout << "After resSize: " << v1.size() << endl;
 
+    // Stack
+    stack <int> st;
+    st.push(100);
+    st.push(200);
+    st.push(300);
+    st.push(400);
+    cout << "Top: " << st.top() << endl;
+    st.pop();
+    cout << "Top: " << st.top() << endl;
+    cout << "Empty: " << st.empty() << endl;
+    cout << "Size: " << st.size() << endl;
+
+    
     return 0;
 }
