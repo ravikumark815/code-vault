@@ -212,6 +212,14 @@ int main()
     cout << "Size: " << pq.size() << endl;
     cout << "Empty: " << pq.empty() << endl;
     
-    
+    priority_queue <int, vector<int>, greater<int>> min_pq; // Min heap
+    min_pq.push(100);
+    min_pq.push(800);
+    min_pq.push(500);
+    min_pq.emplace(300);
+    min_pq.emplace(200);
+    cout << "Top (Min): " << min_pq.top() << endl;
+    cout << "Size: " << min_pq.size() << endl;
+    cout << "Empty: " << min_pq.empty() << endl;
     return 0;
 }
