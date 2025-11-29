@@ -20,6 +20,7 @@ Feel free to explore and contribute!
 #include <map>
 #include <unordered_map>
 #include <set>
+#include <unordered_set>
 
 using namespace std;
 /*
@@ -460,8 +461,36 @@ int main()
     }
     cout << endl;
     
-    // Unordered Set (unordered, unique)
-    unordered_set<
+    // Unordered Set (unordered, unique) Hashset
+    unordered_set <int> us;
+    us.insert(300);
+    us.insert(300);
+    us.insert(300);
+    us.emplace(100);
+    us.insert(500);
+    us.emplace(412);
+    us.insert(175);
 
+    cout << "Unordered Set: ";
+    for (int u : us) {
+        cout << u << " ";
+    }
+    cout << endl;
+
+    cout << "Size: " << us.size() << endl;
+    cout << "Empty: " << us.empty() << endl;
+    cout << "Count: " << us.count(300) << endl;
+    cout << "Bucket count: " << us.bucket_count() << endl;
+    cout << " Load factor: " << us.load_factor() << endl;
+    us.rehash(100); // Set bucket count
+    us.reserve(100); // reserve for at least 100 elements
+    cout << "Unordered Set: ";
+    for (int u : us) {
+        cout << u << " ";
+    }
+    cout << endl;
+    cout << "Bucket count: " << us.bucket_count() << endl;
+    cout << " Load factor: " << us.load_factor() << endl;
+    
     return 0;
 }
