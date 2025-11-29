@@ -494,5 +494,15 @@ int main()
     cout << "Bucket count: " << us.bucket_count() << endl;
     cout << "Load factor: " << us.load_factor() << endl;
     
+    cout << "\n--- Unordered Multiset ---\n";
+    unordered_multiset <int> ums;
+    ums.insert({100,900,900,200,250,200,700,600,650,650});
+    cout << "Unordered multiset: ";
+    for (int u : ums) {
+        cout << u << " ";
+    }
+    cout << endl;
+    cout << "Size: " << ums.size() << endl;
+    cout << "Count: " << ums.count(650) << endl;
     return 0;
 }
