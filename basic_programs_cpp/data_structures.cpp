@@ -387,6 +387,23 @@ int main()
         cout << it.first << ":" << it.second << ", ";
     }
     cout << endl;
-    
+   
+    // Unordered multimap
+    cout << "\n--- Unordered Multimap ---\n";
+    unordered_multimap <int, string> umm;
+    umm.insert({100, "Hundred"});
+    umm.insert({100, "Hundred"});
+    umm.emplace(200, "Two Hundred");
+    umm.emplace(200, "TwoHundred");
+
+    cout << "Unordered Multimap: ";
+    for (auto it: umm) {
+        cout << it.first << ":" << it.second << ", ";
+    }
+    cout << endl;
+
+    cout << "Size: " << umm.size() << endl;
+    cout << "Empty: " << umm.empty() << endl;
+    cout << "Count 200: " << umm.count(200) << endl;
     return 0;
 }
