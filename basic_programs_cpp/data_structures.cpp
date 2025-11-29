@@ -439,6 +439,7 @@ int main()
     cout << endl;
 
     // Multiset (Ordered, Duplicates)
+    cout << "\n--- MultiSet ---\n";
     multiset <int> ms;
     ms.insert(300);
     ms.emplace(200);
@@ -462,6 +463,7 @@ int main()
     cout << endl;
     
     // Unordered Set (unordered, unique) Hashset
+    cout << "\n--- Unordered Set ---\n";
     unordered_set <int> us;
     us.insert(300);
     us.insert(300);
@@ -481,7 +483,7 @@ int main()
     cout << "Empty: " << us.empty() << endl;
     cout << "Count: " << us.count(300) << endl;
     cout << "Bucket count: " << us.bucket_count() << endl;
-    cout << " Load factor: " << us.load_factor() << endl;
+    cout << "Load factor: " << us.load_factor() << endl;
     us.rehash(100); // Set bucket count
     us.reserve(100); // reserve for at least 100 elements
     cout << "Unordered Set: ";
@@ -490,7 +492,7 @@ int main()
     }
     cout << endl;
     cout << "Bucket count: " << us.bucket_count() << endl;
-    cout << " Load factor: " << us.load_factor() << endl;
+    cout << "Load factor: " << us.load_factor() << endl;
     
     return 0;
 }
