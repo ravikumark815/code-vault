@@ -19,6 +19,8 @@ Feel free to explore and contribute!
 #include <forward_list>
 #include <map>
 #include <unordered_map>
+#include <set>
+
 using namespace std;
 /*
 pair
@@ -405,5 +407,61 @@ int main()
     cout << "Size: " << umm.size() << endl;
     cout << "Empty: " << umm.empty() << endl;
     cout << "Count 200: " << umm.count(200) << endl;
+
+    // Set (Ordered, unique)
+    cout << "\n--- Sets ---\n";
+    set <int> s;
+    s.emplace(200);
+    s.emplace(200);
+    s.insert(100);
+    s.emplace(200);
+    s.emplace(200);
+    s.insert({100,200,300,400,500,600});
+    
+    cout << "Set: ";
+    for (int it: s) {
+        cout << it << " ";
+    }
+    cout << endl;
+    
+    cout << "Size: " << s.size() << endl;
+    cout << "Empty: " << s.empty() << endl;
+    cout << "Count: " << s.count(100) << endl;
+
+    s.erase(300);
+    s.erase(s.begin(), s.find(200));
+
+    cout << "Set: ";
+    for (int it: s) {
+        cout << it << " ";
+    }
+    cout << endl;
+
+    // Multiset (Ordered, Duplicates)
+    multiset <int> ms;
+    ms.insert(300);
+    ms.emplace(200);
+    ms.insert(300);
+    ms.emplace(200);
+    ms.insert(100);
+    ms.emplace(800);
+
+    cout << "Multiset: ";
+    for (int m : ms) {
+        cout << m << " ";
+    }
+    cout << endl;
+
+    ms.erase(300);
+
+    cout << "Multiset: ";
+    for (int m : ms) {
+        cout << m << " ";
+    }
+    cout << endl;
+    
+    // Unordered Set (unordered, unique)
+    unordered_set<
+
     return 0;
 }
