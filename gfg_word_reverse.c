@@ -6,6 +6,8 @@ This file is part of the 'code-vault' repository.
 Feel free to explore and contribute!
 */
 
+// Question: https://www.geeksforgeeks.org/dsa/reverse-words-in-a-given-string/
+
 #include <stdio.h>
 #include <string.h>
 
