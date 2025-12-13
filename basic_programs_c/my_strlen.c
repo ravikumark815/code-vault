@@ -8,7 +8,7 @@ Feel free to explore and contribute!
 
 #include <stdio.h>
 
-int mystrlen(char *s) {
+int my_strlen(char *s) {
     int res = 0;
     while (s[res]) {
         res++;
@@ -21,6 +21,6 @@ int main()
     char *s;
     printf("Enter string: ");
     scanf("%s", s);
-    printf("Length of %s: %d\n", s, mystrlen(s));
+    printf("Length of %s: %d\n", s, my_strlen(s));
     return 0;
 }
