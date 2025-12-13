@@ -6,7 +6,7 @@ This file is part of the 'code-vault' repository.
 Feel free to explore and contribute!
 */
 
-// Questions: https://www.geeksforgeeks.org/dsa/a-program-to-check-if-strings-are-rotations-of-each-other/
+// Question: https://www.geeksforgeeks.org/dsa/a-program-to-check-if-strings-are-rotations-of-each-other/
 
 #include <stdio.h>
 #include <string.h>
