@@ -33,10 +33,10 @@ BLOCK find_free_block(BLOCK *last, size_t size) {
 }
 
 BLOCK request_new_space(BLOCK last, size_t size) {
-    BLOCK block = sbrk(0);
     // sbrk returns (void*)-1 on error
     void *request = sbrk(size + sizeof(struct block));
     if (request == (void*) - 1) return NULL;
+    BLOCK block = (BLOCK)request;
     if (last) last->next = block;
 
     block->size = size;
